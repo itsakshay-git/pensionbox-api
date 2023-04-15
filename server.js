@@ -20,7 +20,7 @@ app.use(
     cors({
       origin: ["https://pensionbox.onrender.com", "http://localhost:3000"],
       credentials: true,
-      allowedHeaders: ['Content-Type', 'x-auth-token'],
+      sameSite: 'none'
     })
   );
 

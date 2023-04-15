@@ -183,7 +183,7 @@ const registerUser = asyncHandler(async (req, res) => {
     expires: new Date(Date.now() + 1000 * 86400), //one day
     sameSite: "none",
     secure: true,
-    domain: '.render.com'
+    sameSite: 'none'
   });
 
   if (user) {
@@ -236,7 +236,7 @@ const loginUser = asyncHandler(async (req, res) => {
       expires: new Date(Date.now() + 1000 * 86400), //one day
       sameSite: "none",
       secure: true,
-      domain: '.render.com'
+      sameSite: 'none'
     });
 
   if (user && passwordIsCorrect) {
@@ -266,7 +266,7 @@ const logout = asyncHandler(async (req, res) => {
         expires: new Date(0),
         sameSite: "none",
         secure: true,
-        domain: '.render.com'
+        sameSite: 'none'
       });
 
       return res.status(200).json({message: "Successfully Logged Out"})
